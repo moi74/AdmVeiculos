@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Administradora de carros</title>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="reset.css">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body class="container">
+        <header>Administradora de Carros</header>
+        <div></div>
+        <main>
+            <h1>Carros Cadastrados</h1>
+            <table>
+                <tr>
+                    <th>Modelo</th>
+                    <th>Ano</th>
+                    <th>Ações</th>
+                </tr>
+                <% for (i = 0; i < veiculos.length; i++) { %>
+                    <tr>
+                        <td><%= veiculos[i].modelo %></td>
+                        <td><%= veiculos[i].ano %></td>
+                        <td>
+                            <a href="excluir?id=<%= veiculos[i].id %>">Excluir</a><br>
+                            <a href="veiculo?id=<%= veiculos[i].id %>">Visualizar</a>
+                        </td>
+                    </tr>
+                <% } %>
+              </table>
+
+
+              <a href="/cadastro">
+                <button>Novo cadastro</button>
+             </a>
+        </main>
+    </body>
+</html>

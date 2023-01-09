@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Atualização de cadastro</title>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="reset.css">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body class="container">
+        <header>Administradora de Carros</header>
+        <div></div>
+        <main>
+            <h1>Atualizar dados do carro</h1>
+            <form method="POST" action="salvar">
+                Placa: <input name="placa" id="placa" value="<%= dadosForm[0].placa %>"></input>
+                Chassi: <input name="chassi" id="chassi" value="<%= dadosForm[0].chassi %>"></input>
+                Renavam: <input name="renavam" id="renavam" value="<%= dadosForm[0].renavam %>"></input></br></br>
+                Modelo: <input name="modelo" id="modelo" value="<%= dadosForm[0].modelo %>"></input>
+                Marca: <input name="marca" id="marca" value="<%= dadosForm[0].marca %>"></input>
+                Ano: <input type="number" name="ano" id="ano" value="<%= dadosForm[0].ano %>"></input></br></br></br>
+                <input type="hidden" name="id" value="<%= dadosForm[0].id %>"/>
+            
+                <button type="submit" name="acao" value="salvar">Salvar</button>
+                <a href="veiculo?id=<%= dadosForm[0].id %>">
+                    <button type="button">Cancelar</button>
+                </a>
+            </form>
+            <br><br><br>
+            
+
+            <% if(validacao.length > 0){ %>
+                <strong>Atenção</strong>
+                <ul>
+                    <% for (i = 0; i < validacao.length; i++) { %>
+                        <li><%= validacao[i].msg %></li>
+                    <% } %>
+                </ul>
+            <% } %>
+        </main>
+    </body>
+</html>

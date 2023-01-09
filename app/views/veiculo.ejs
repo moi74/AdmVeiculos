@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Administradora de carros</title>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="reset.css">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body class="container">
+        <header>Administradora de Carros</header>
+        <div></div>
+        <main>
+            <h1>Carro Nº <%= veiculo[0].id %></h1>
+            <ul>
+                <li><span style="font-size: 18px; margin: 21px 0;">Placa: <%= veiculo[0].placa %></span></li><br>
+                <li><span style="font-size: 18px; margin: 21px 0;">Chassi: <%= veiculo[0].chassi %></span></li><br>
+                <li><span style="font-size: 18px; margin: 21px 0;">Renavam: <%= veiculo[0].renavam %></span></li><br>
+                <li><span style="font-size: 18px; margin: 21px 0;">Modelo: <%= veiculo[0].modelo %></span></li><br>
+                <li><span style="font-size: 18px; margin: 21px 0;">Marca: <%= veiculo[0].marca %></span></li><br>
+                <li><span style="font-size: 18px; margin: 21px 0;">Ano: <%= veiculo[0].ano %></span></li><br>
+            </ul>
+
+              <a href="/">
+                <button>Retornar</button>
+             </a>
+             <a href="editar?id=<%= veiculo[0].id %>">
+                 <button>Editar</button>
+             </a>
+        </main>
+    </body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Cadastro de carros</title>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="reset.css">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body class="container">
+        <header>Administradora de Carros</header>
+        <div></div>
+        <main>
+            <h1>Cadastre aqui o seu carro</h1>
+            <form method="POST" action="salvar">
+                Placa: <input name="placa" id="placa" value="<%= dadosForm.placa %>"></input>
+                Chassi: <input name="chassi" id="chassi" value="<%= dadosForm.chassi %>"></input>
+                Renavam: <input name="renavam" id="renavam" value="<%= dadosForm.renavam %>"></input></br></br>
+                Modelo: <input name="modelo" id="modelo" value="<%= dadosForm.modelo %>"></input>
+                Marca: <input name="marca" id="marca" value="<%= dadosForm.marca %>"></input>
+                Ano: <input type="number" name="ano" id="ano" value="<%= dadosForm.ano %>"></input></br></br></br>
+            
+                <button type="submit" value="cadastrar" name="acao">Cadastrar</button>
+                <a href="/">
+                    <button type="button">Cancelar</button>
+                </a>
+            </form>
+            <br><br><br>
+            
+
+            <% if(validacao.length > 0){ %>
+                <strong>Atenção</strong>
+                <ul>
+                    <% for (i = 0; i < validacao.length; i++) { %>
+                        <li><%= validacao[i].msg %></li>
+                    <% } %>
+                </ul>
+            <% } %>
+        </main>
+    </body>
+</html>
